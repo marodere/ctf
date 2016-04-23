@@ -19,7 +19,7 @@ How to find out if there's such set? We'll answer using dynamic programming. Let
 First of all, suppose that we're able to score 0 nodes using no subgraphs.
 Next,
 - If we're able to score `w` nodes using subgraphs `1..i-1`, then we're able to score `w` nodes even with subgraph `i` - we just not required to include it.
-- If we're able to score `w-freeParts[i]` nodes using subgraphs `1..i-1`, then we're able to score `w` nodes using subgraph `i` by adding it to the set.
+- If we're able to score `w-fP[i]` nodes using subgraphs `1..i-1`, then we're able to score `w` nodes using subgraph `i` by adding it to the set.
 By applying this formula for `w` from 0 to N/2 and for all subgraphs we arrive to the answer.
 
 ## So
@@ -28,5 +28,4 @@ Find out the answer binary searching by `ew`.
 ```
 ./friends.py 
 ssctf{43226;9474;40749;750}
-
 ```
