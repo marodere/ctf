@@ -12,14 +12,18 @@ Pick some integer `ew > 0`. Assume that `ew` is the largest connection-weight th
 
 Remove all edges but greater than `ew` from the graph. The graph got splitted into a few connected subgraphs, each containing one or more nodes. So with `ew = 0` no edge will be removed - it will be the original graph. With `ew` greater than the greatest edge, all edges will be removed, so all nodes will be disconnected and N subgraphs should be there.
 
-Every such subgraph should entirely belong to the one half.  we can split the graph into two equal halves with the largest connection-weight `ew` if and only if we there's some set of the subgraphs that contains exactly N/2 nodes.
+Every such subgraph should entirely belong to the one half. We can split the graph into two equal halves with the largest connection-weight `ew` if and only if we there's some set of the subgraphs that contains exactly N/2 nodes.
 
 ## Subset sum
 How to find out if there's such set? We'll answer using dynamic programming. Let `fP[i]` be the count of nodes in the `i`'s subgraph and try to score `w` nodes.
+
 First of all, suppose that we're able to score 0 nodes using no subgraphs.
+
 Next,
+
 - If we're able to score `w` nodes using subgraphs `1..i-1`, then we're able to score `w` nodes even with subgraph `i` - we just not required to include it.
 - If we're able to score `w-fP[i]` nodes using subgraphs `1..i-1`, then we're able to score `w` nodes using subgraph `i` by adding it to the set.
+
 By applying this formula for `w` from 0 to N/2 and for all subgraphs we arrive to the answer.
 
 ## So
