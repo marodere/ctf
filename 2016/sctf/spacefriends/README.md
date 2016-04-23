@@ -8,11 +8,11 @@ We have a set of friends of even size, some with bi-directional pairwise connect
 N (guaranteed to be even) and M (number of connections). M lines follow this line. Each one represents a connection and has three tokens. The first two are the friends it connects, and the last one is the weight of the connection.
 
 ## Dividing graph
-Pick some integer `ew > 0`. Assume that `ew` is the largest connection-weight that crosses between the two halfs. Notice that if threr's an edge greater than `ew` between two nodes, both should belong to the same half. Therefore, if there's a path between two nodes consisting edges greater than `ew`, both should belong to the same half.
+Pick some integer `ew > 0`. Assume that `ew` is the largest connection-weight that crosses between the two halfs. Notice that if there's an edge greater than `ew` between two nodes, both should belong to the same half. Therefore, if there's a path between two nodes consisting edges greater than `ew`, both should belong to the same half.
 
 Remove all edges but greater than `ew` from the graph. The graph got splitted into a few connected subgraphs, each containing one or more nodes. So with `ew = 0` no edge will be removed - it will be the original graph. With `ew` greater than the greatest edge, all edges will be removed, so all nodes will be disconnected and N subgraphs should be there.
 
-Every such subgraph should entirely belong to the one half. We can split the graph into two equal halves with the largest connection-weight `ew` if and only if we there's some set of the subgraphs that contains exactly N/2 nodes.
+Every such subgraph should entirely belong to the one half. We can split the graph into two equal halves with the largest connection-weight `ew` if and only if there's some set of the subgraphs that contains exactly N/2 nodes.
 
 ## Subset sum
 How to find out if there's such set? We'll answer using dynamic programming. Let `fP[i]` be the count of nodes in the `i`'s subgraph and try to score `w` nodes.
