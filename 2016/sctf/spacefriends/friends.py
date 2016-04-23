@@ -68,7 +68,7 @@ def solve(fd):
 
 def main():
     ans = [solve(open(network, 'r')) for network in ['network1.txt', 'network2.txt', 'network3.txt', 'network4.txt']]
-    print 'ssctf{%s}' % ';'.join((str(a) for a in ans))
+    print 'sctf{%s}' % ';'.join((str(a) for a in ans))
 
 if __name__== "__main__":
     main()

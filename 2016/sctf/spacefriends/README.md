@@ -31,5 +31,5 @@ Find out the answer binary searching by `ew`.
 
 ```
 ./friends.py 
-ssctf{43226;9474;40749;750}
+sctf{43226;9474;40749;750}
 ```
