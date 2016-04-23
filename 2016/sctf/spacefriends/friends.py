@@ -53,7 +53,7 @@ def fit_subset(fP, weightNeed):
 def solve(fd):
         g = TGraph()
         g.read(fd)
-        edgesWeights = g.get_edges_weights()
+        edgesWeights = [0] + g.get_edges_weights()
         edgesWeights.sort(reverse=True)
         l = 0
         r = len(edgesWeights)
