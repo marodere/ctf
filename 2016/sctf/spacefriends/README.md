@@ -15,7 +15,7 @@ Remove all edges but greater than `ew` from the graph. The graph got splitted in
 Every such subgraph should entirely belong to the one half.  we can split the graph into two equal halves with the largest connection-weight `ew` if and only if we there's some set of the subgraphs that contains exactly N/2 nodes.
 
 ## Subset sum
-How to find out is thre're such set? We'll find out an answer using dynamic programming. Let `freeParts[i]` be a count of nodes in the `i`'s subgraph and try to score `w` nodes.
+How to find out if there's such set? We'll answer using dynamic programming. Let `fP[i]` be the count of nodes in the `i`'s subgraph and try to score `w` nodes.
 First of all, suppose that we're able to score 0 nodes using no subgraphs.
 Next,
 - If we're able to score `w` nodes using subgraphs `1..i-1`, then we're able to score `w` nodes even with subgraph `i` - we just not required to include it.
